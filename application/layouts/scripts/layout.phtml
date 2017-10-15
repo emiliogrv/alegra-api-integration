@@ -1,0 +1,229 @@
+<?php echo $this->doctype(); ?>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+        <title>
+            <?php echo isset($this->titlePage) ? $this->titlePage : 'Alegra'; ?>
+        </title>
+
+        <link rel="stylesheet" href="/css/theme-classic-all.css">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <a href="/">
+                    <img src="/img/logo_alegra.png" style="width: 178px">
+                </a>
+            </div>
+            <nav style="position: relative;">
+                <div style="width:1024px; margin: 0 auto">
+
+                    <ul id="nav1" class="primary">
+                        <li class="">
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class=" hasSubmenu ">
+                            <a href="#">Ingresos</a>
+                            <ul class="secondary">
+                                <li>
+                                    <a href="#">Facturas de venta</a>
+                                </li>
+                                <li>
+                                    <a href="#">Facturas recurrentes</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pagos recibidos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Notas crédito</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cotizaciones</a>
+                                </li>
+                                <li>
+                                    <a href="#">Remisiones</a>
+                                </li>
+                                <li>
+                                    <a href="#">POS</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" hasSubmenu ">
+                            <a href="#">Gastos</a>
+                            <ul class="secondary">
+                                <li>
+                                    <a href="#">Pagos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Facturas de proveedores</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pagos Recurrentes</a>
+                                </li>
+                                <li>
+                                    <a href="#">Notas débito</a>
+                                </li>
+                                <li>
+                                    <a href="#">Órdenes de compra</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active hasSubmenu ">
+                            <a href="/clients">Contactos</a>
+                            <ul class="secondary">
+                                <li class="active">
+                                    <a href="/clients">Todos</a>
+                                </li>
+                                <li>
+                                    <a href="/clients?type=client">Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="/clients?type=provider">Proveedores</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" hasSubmenu ">
+                            <a href="#">Inventario</a>
+                            <ul class="secondary">
+                                <li>
+                                    <a href="#">Items de venta</a>
+                                </li>
+                                <li>
+                                    <a href="#">Valor de Inventario</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ajustes a Inventario</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gestión de Items</a>
+                                </li>
+                                <li>
+                                    <a href="#">Listas de precios</a>
+                                </li>
+                                <li>
+                                    <a href="#">Bodegas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" hasSubmenu ">
+                            <a href="#">Bancos</a>
+                        </li>
+                        <li class=" hasSubmenu ">
+                            <a href="#">Categorías</a>
+                            <ul class="secondary">
+                                <li>
+                                    <a href="#">Categorías</a>
+                                </li>
+                                <li>
+                                    <a href="#">Ajustes de Categorías</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a class="menu-small" href="#">Reportes</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <noscript>
+                <h1 style="margin-top: 80px;">
+                    ¡Lo sentimos, su navegador no soporta JavaScript!
+                </h1>
+            </noscript>
+
+            <?php echo $this->layout()->content; ?>
+        </main>
+
+        <footer>
+            <section>
+                <div>
+                    <img src="/img/ayuda_icon.png" alt="">
+                    <h4 id="help"> Ayudas paso a paso </h4>
+                </div>
+
+                <ul>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/205798409-C%C3%B3mo-hacer-una-Factura-de-venta-" class="initWalkthru" data-walktrhu-name="createInvoice"
+                            data-walkthru-id="17946" target="_blank">Cómo crear una factura de venta</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206509365--C%C3%B3mo-crear-una-Factura-de-Proveedor-" class="initWalkthru"
+                            data-walktrhu-name="createBill" data-walkthru-id="18401" target="_blank">Cómo crear una factura de proveedor</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206509615--C%C3%B3mo-importar-contactos-" class="initWalkthru" data-walktrhu-name="createClient"
+                            data-walkthru-id="18066" target="_blank">Cómo importar contactos</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206512955--C%C3%B3mo-crear-un-Banco-" class="initWalkthru" data-walktrhu-name="createAccount"
+                            data-walkthru-id="18065" target="_blank">Cómo crear una cuenta de Banco</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206509105-Agregar-un-pago-a-una-factura" class="initWalkthru" data-walktrhu-name="createInvoicePayment"
+                            data-walkthru-id="18475" target="_blank">Cómo registrar un pago a una factura de venta</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/205798349--C%C3%B3mo-crear-una-Nota-Cr%C3%A9dito-" class="initWalkthru" data-walktrhu-name="createCreditNote"
+                            data-walkthru-id="18116" target="_blank">Cómo crear una nota crédito</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div>
+                    <img src="/img/soporte_icon.png" alt="">
+                    <h4 id="support">Soporte</h4>
+                </div>
+
+                <ul>
+                    <li>
+                        <a href="#">Contáctanos</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es" target="_blank">Centro de ayuda</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alegra.com/manual.pdf" target="_blank">Manual de primeros pasos en Alegra</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alegra.com/acrecer-con-alegra" target="_blank">Plan de referidos</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/205761789-Caso-de-%C3%A9xito" target="_blank">Comparte tu historia</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <div>
+                    <img src="/img/info_icon_1.png" alt="">
+                    <h4 id="contact">Contactos</h4>
+                </div>
+
+                <ul>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206509595--C%C3%B3mo-crear-un-cliente-y-o-proveedor-" target="_blank">¿Cómo crear un Cliente?</a>
+                    </li>
+                    <li>
+                        <a href="http://ayuda.alegra.com/hc/es/articles/206509615--C%C3%B3mo-importar-contactos-" target="_blank">¿Cómo importar contactos?</a>
+                    </li>
+                </ul>
+            </section>
+        </footer>
+    </body>
+
+    <script src="/js/URI.min.js"></script>
+    <script src="/js/ext-all.js"></script>
+    <script src="/js/ext-locale-es.js"></script>
+    <script src="/js/ext-loader.js"></script>
+
+</html>

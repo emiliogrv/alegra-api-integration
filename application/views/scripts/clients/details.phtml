@@ -1,0 +1,168 @@
+<section id="tools-bar">
+    <h1>
+        <?php echo $this->titlePage; ?>
+    </h1>
+    <a href="#" class="button2 add">Crear factura de venta</a>
+    <a href="#" class="button2 add">Crear factura de compra</a>
+    <a href="/clients/edit/id/<?php echo $this->contact->id; ?>" class="button2 edit">Editar</a>
+</section>
+
+<div>
+    <table class="table-details-vertical">
+        <tr>
+            <th>
+                Datos generales
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Nombre</td>
+            <td>
+                <?php echo $this->contact->name; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Identificación</td>
+            <td>
+                <?php echo $this->contact->identification; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Teléfono</td>
+            <td>
+                <?php echo $this->contact->phonePrimary; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Teléfono 2</td>
+            <td>
+                <?php echo $this->contact->phoneSecondary; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Celular</td>
+            <td>
+                <?php echo $this->contact->mobile; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Dirección</td>
+            <td>
+                <?php echo $this->contact->address->address; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Ciudad</td>
+            <td>
+                <?php echo $this->contact->address->city; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Correo electrónico</td>
+            <td>
+                <?php echo $this->contact->email; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Lista de precios</td>
+            <td>
+                <?php echo isset($this->contact->priceList->name) ? $this->contact->priceList->name : null; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Observaciones</td>
+            <td>
+                <?php echo $this->contact->observations; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Archivos adjuntos</td>
+            <td>
+                <a href="#">Adjuntar</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Enlace estado de cuenta</td>
+            <td>
+                <a href="#">Generar</a>
+                <img id="tooltip" style="cursor: help" src="/img/help.png">
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div>
+    <table class="table-details-vertical">
+        <tr>
+            <th>
+                Saldos
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Por cobrar</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Por cobrar vencido</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Por pagar</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Anticipos recibidos</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Anticipos entregados</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Notas crédito por aplicar</td>
+            <td>Bs0.00</td>
+        </tr>
+        <tr>
+            <td>Notas débito por aplicar</td>
+            <td>Bs0.00</td>
+        </tr>
+    </table>
+
+    <?php if (count($this->contact->internalContacts)) : ?>
+    <table class="table-contact-details">
+        <tbody>
+            <tr>
+                <th>Contacto</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Celular</th>
+                <th>Notificaciones</th>
+            </tr>
+
+            <?php foreach ($this->contact->internalContacts as $contact) : ?>
+            <tr>
+                <td>
+                    <?php echo $contact->name . ' ' . $contact->lastName; ?>
+                </td>
+                <td>
+                    <?php echo $contact->email; ?>
+                </td>
+                <td>
+                    <?php echo $contact->phone; ?>
+                </td>
+                <td>
+                    <?php echo $contact->mobile; ?>
+                </td>
+                <td>
+                    <?php echo $contact->sendNotifications ? 'Sí' : 'No'; ?>
+                </td>
+            </tr>
+            <?php endforeach;?>
+        </tbody>
+    </table>
+    <?php endif;?>
+
+</div>

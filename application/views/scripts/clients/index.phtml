@@ -1,0 +1,12 @@
+<section id="tools-bar">
+    <img src="/img/index-icon.png" alt="">
+    <h1>
+        <?php echo $this->titlePage; ?>
+    </h1>
+    <a href="/clients/add?type=<?php echo $this->newType; ?>" class="button green">
+        <span class="plus"></span>
+        <?php echo 'Nuevo ' . $this->newButton; ?>
+    </a>
+</section>
+
+<div id="clients-grid" class="with-logo"></div>
